@@ -1,0 +1,16 @@
+{
+    "name": "koala-framework/kwf-deftjs",
+    "description": "DeftJS Integration for Koala Framework",
+    "homepage": "http://www.koala-framework.org/",
+    "license": "BSD-2-Clause",
+    "type": "library",
+    "require": {
+        "koala-framework/library-deftjs": "0.9.1",
+        "koala-framework/koala-framework": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Kwf_DeftJS_": ""
+        }
+    }
+}
