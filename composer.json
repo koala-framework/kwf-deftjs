@@ -5,8 +5,12 @@
     "license": "BSD-2-Clause",
     "type": "library",
     "require": {
-        "koala-framework/library-deftjs": "0.9.1",
         "koala-framework/koala-framework": "dev-master"
+    },
+    "extra": {
+        "require-bower": {
+            "deftjs": "deftjs/DeftJS#0.9.1"
+        }
     },
     "autoload": {
         "psr-0": {
