@@ -8,7 +8,7 @@ class Kwf_DeftJS_Assets_JsDependency extends Kwf_Assets_Dependency_File_Js
         if (isset($this->_fileNameCache)) return $this->_fileNameCache;
 
         $pathType = $this->getType();
-        if ($pathType != 'deftjs') throw new Kwf_Exception("invalid path type: '$pathType'");
+        if ($pathType != 'deft') throw new Kwf_Exception("invalid path type: '$pathType'");
 
         $paths = self::_getAllPaths();
         $f = substr($this->_fileName, strpos($this->_fileName, '/'));
