@@ -13,13 +13,10 @@ class Kwf_DeftJS_Assets_JsDependency extends Kwf_Assets_Dependency_File_Js
         $cmd = "$coffee -cb $inFile";
         $cmd .= "  2>&1";
         $out = array();
-        echo "\n".$cmd."\n";
         exec($cmd, $out, $retVal);
         if ($retVal) {
             throw new Kwf_Exception("coffee failed: ".implode("\n", $out));
         }
-
-        $ret = file_get_contents($outFile);
 
 
         $ret = "(function(Ext) {".$ret."})(this.Ext4);";
