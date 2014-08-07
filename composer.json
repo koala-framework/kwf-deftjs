@@ -10,6 +10,9 @@
     "extra": {
         "require-bower": {
             "deftjs": "deftjs/DeftJS#0.9.1"
+        },
+        "require-npm": {
+            "coffee-script": "1.7.1"
         }
     },
     "autoload": {

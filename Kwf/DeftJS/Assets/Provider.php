@@ -6,7 +6,7 @@ class Kwf_DeftJS_Assets_Provider extends Kwf_Assets_Provider_Abstract
         if (substr($dependencyName, 0, 5) == 'Deft.') {
             $class = $dependencyName;
             $class = substr($class, 5);
-            return new Kwf_DeftJS_Assets_JsDependency('deft/'.str_replace('.', '/', $class).'.js');
+            return new Kwf_DeftJS_Assets_JsDependency('deft/'.str_replace('.', '/', $class).'.coffee');
         }
         return null;
     }
