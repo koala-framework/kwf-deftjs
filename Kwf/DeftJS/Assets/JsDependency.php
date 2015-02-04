@@ -22,7 +22,7 @@ class Kwf_DeftJS_Assets_JsDependency extends Kwf_Assets_Dependency_File_Js
     protected function _getRawContents($language)
     {
         $ret = parent::_getRawContents($language);
-        $coffee = dirname(dirname(dirname(dirname(__FILE__)))).'/node_modules/.bin/coffee';
+        $coffee = "node ".dirname(dirname(dirname(dirname(__FILE__)))).'/node_modules/coffee-script/bin/coffee';
 
         $inFile = tempnam('temp', 'coffee');
         $outFile = $inFile.'.js';
@@ -34,6 +34,11 @@ class Kwf_DeftJS_Assets_JsDependency extends Kwf_Assets_Dependency_File_Js
         exec($cmd, $out, $retVal);
         if ($retVal) {
             throw new Kwf_Exception("coffee failed: ".implode("\n", $out));
+        }
+
+        if (!file_exists($outFile) && substr($outFile, -7) == '.tmp.js') {
+            //under windows files are named .tmp which is stripped by coffee
+            $outFile = substr($outFile, 0, -7).'.js'; //
         }
 
         $ret = file_get_contents($outFile);
