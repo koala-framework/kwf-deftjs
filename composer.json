@@ -5,7 +5,8 @@
     "license": "BSD-2-Clause",
     "type": "library",
     "require": {
-        "koala-framework/koala-framework": "3.8.x-dev"
+        "koala-framework/koala-framework": "3.8.x-dev",
+        "koala-framework/composer-extra-assets": "~1.1"
     },
     "extra": {
         "require-bower": {
