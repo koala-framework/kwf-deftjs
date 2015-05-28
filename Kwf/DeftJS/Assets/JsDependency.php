@@ -33,7 +33,7 @@ class Kwf_DeftJS_Assets_JsDependency extends Kwf_Assets_Dependency_File_Js
         $out = array();
         exec($cmd, $out, $retVal);
         if ($retVal) {
-            throw new Kwf_Exception("coffee failed: ".implode("\n", $out));
+            throw new Kwf_Exception("coffee failed: $cmd\n".implode("\n", $out));
         }
 
         if (!file_exists($outFile) && substr($outFile, -7) == '.tmp.js') {
