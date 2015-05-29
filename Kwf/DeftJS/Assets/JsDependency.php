@@ -22,7 +22,7 @@ class Kwf_DeftJS_Assets_JsDependency extends Kwf_Assets_Dependency_File_Js
     protected function _getRawContents($language)
     {
         $ret = parent::_getRawContents($language);
-        $coffee = "./vendor/bin/node ".dirname(dirname(dirname(dirname(__FILE__)))).'/node_modules/coffee-script/bin/coffee';
+        $coffee = getcwd()."/vendor/bin/node ".dirname(dirname(dirname(dirname(__FILE__)))).'/node_modules/coffee-script/bin/coffee';
 
         $inFile = tempnam('temp', 'coffee');
         $outFile = $inFile.'.js';
